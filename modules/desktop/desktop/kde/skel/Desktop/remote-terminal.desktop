@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Remote Terminal
+Exec=konsole -e "ssh -Kt tsunami"
+Icon=/etc/ocf/icons/ssh-terminal.png
