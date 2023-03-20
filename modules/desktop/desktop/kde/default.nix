@@ -34,5 +34,7 @@ in
         mode = "0777";
       };
     };
+
+    ocf.suites.auth.pamServices = ["lightdm"];
   };
 }

@@ -10,7 +10,7 @@ with lib;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.loader.efi.efiSysMountPoint = "/boot/";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -71,6 +71,7 @@ with lib;
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  ocf.suites.auth = enabled;
   ocf.suites.desktop = enabled;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -105,7 +106,8 @@ with lib;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    git
   #  wget
   ];
 
@@ -120,7 +122,7 @@ with lib;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
