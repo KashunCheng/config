@@ -6,5 +6,5 @@ final: prev: {
             ./avatar.patch
             ./avatar-dark.patch
         ];
-    })
+    });
 }

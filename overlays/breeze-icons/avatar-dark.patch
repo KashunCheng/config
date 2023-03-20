@@ -1,5 +1,5 @@
---- /nix/store/5k6f2d6zkqzqg17h3xc47k75wfybf7sq-breeze-icons-5.100.0/share/icons/breeze-dark/status/symbolic/avatar-default-symbolic.svg	1969-12-31 16:00:01.000000000 -0800
-+++ ../../modules/assets/ocf-images/assets/images/ocf-notification.svg	2023-03-19 11:51:46.896544820 -0700
+--- a/share/icons/breeze-dark/status/symbolic/avatar-default-symbolic.svg	1969-12-31 16:00:01.000000000 -0800
++++ b/share/icons/breeze-dark/status/symbolic/avatar-default-symbolic.svg	1969-12-31 16:00:01.000000000 -0800
 @@ -1,14 +1,209 @@
 -<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 -  <defs id="defs3051">
