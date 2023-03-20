@@ -17,7 +17,8 @@ in
     services.xserver.displayManager.lightdm.enable = true;
     services.xserver.desktopManager.plasma5.enable = true;
     services.xserver.displayManager.lightdm.greeters.gtk.enable = true;
-    services.xserver.displayManager.lightdm.greeters.gtk.theme.name = "Arc";
+    services.xserver.displayManager.lightdm.greeters.gtk.theme.name = "breeze";
+    services.xserver.displayManager.lightdm.greeters.gtk.iconTheme.name = "breeze";
     services.xserver.displayManager.lightdm.greeters.gtk.cursorTheme.name = "breeze_cursors";
     services.xserver.displayManager.lightdm.greeters.gtk.indicators = ["~host" "~spacer" "~clock" "~spacer" "~layout" "~language" "~session" "~ally" "~power"];
 
