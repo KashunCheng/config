@@ -17,7 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    ocf.suites.auth.pamServices = [ "sshd" ];
+    ocf.suites.auth.pamServices = [ "login" "su" "sudo" "sshd" ];
 
     users.ldap = {
       enable = true;
@@ -48,6 +48,10 @@ in
         "ocf.berkeley.edu" = "OCF.BERKELEY.EDU";
         ".ocf.berkeley.edu" = "OCF.BERKELEY.EDU";
       };
+
+      libdefaults = {
+        default_realm = "OCF.BERKELEY.EDU";
+      };
     };
 
     security.pam.makeHomeDir = {
@@ -61,5 +65,11 @@ in
         }; }
       )
       cfg.pamServices;
+
+    # Login shells need to exist at /bin
+    # Hack using systemd-tmpfiles to make the links
+    systemd.tmpfiles.rules = map (shell:
+      "L /bin/${shell} - - - - ${pkgs."${shell}"}/bin/${shell}"
+    ) ["bash" "zsh" "fish" "ksh"];
   };
 }
